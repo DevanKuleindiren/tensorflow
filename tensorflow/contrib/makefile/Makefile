@@ -425,6 +425,9 @@ $(wildcard tensorflow/core/platform/*/*.cc) \
 $(wildcard tensorflow/core/platform/*/*/*.cc) \
 $(wildcard tensorflow/core/util/*.cc) \
 $(wildcard tensorflow/core/util/*/*.cc) \
+$(wildcard tensorflow/Source/util/*.cc) \
+$(wildcard tensorflow/Source/lm/*.cc) \
+$(wildcard tensorflow/Source/lm/rnn/*.cc) \
 tensorflow/core/util/version_info.cc
 # Remove duplicates (for version_info.cc)
 CORE_CC_ALL_SRCS := $(sort $(CORE_CC_ALL_SRCS))
@@ -456,7 +459,10 @@ $(wildcard tensorflow/core/platform/png.*) \
 $(wildcard tensorflow/core/platform/stream_executor.*) \
 $(wildcard tensorflow/core/user_ops/*.cu.cc) \
 $(wildcard tensorflow/core/common_runtime/gpu/*) \
-$(wildcard tensorflow/core/common_runtime/gpu_device_factory.*)
+$(wildcard tensorflow/core/common_runtime/gpu_device_factory.*) \
+$(wildcard tensorflow/Source/util/*test.cc) \
+$(wildcard tensorflow/Source/lm/*test.cc) \
+$(wildcard tensorflow/Source/lm/rnn/*test.cc)
 # Filter out all the excluded files.
 TF_CC_SRCS := $(filter-out $(CORE_CC_EXCLUDE_SRCS), $(CORE_CC_ALL_SRCS))
 # Add in any extra files that don't fit the patterns easily
